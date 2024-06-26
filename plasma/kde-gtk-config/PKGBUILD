@@ -1,0 +1,49 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=kde-gtk-config
+pkgver=6.1.1
+_dirver=$(echo $pkgver | cut -d. -f1-3)
+pkgrel=0
+pkgdesc='Syncs KDE settings to GTK applications'
+arch=(x86_64)
+url='https://kde.org/plasma-desktop/'
+license=(LGPL-2.0-or-later)
+depends=(gcc-libs
+         glib2
+         glibc
+         kcolorscheme
+         kconfig
+         kcoreaddons
+         kdbusaddons
+         kdecoration
+         kguiaddons
+         kwindowsystem
+         qt6-base
+         qt6-svg
+         sh
+         xsettingsd)
+makedepends=(extra-cmake-modules
+             gtk3
+             sassc)
+optdepends=('gtk3: GTK3 apps support')
+groups=(plasma)
+source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('722662bb7b6fec6ef21ecf1d6da3fda94beada6bd458c05f2b76fe7aa53997a4'
+            'SKIP')
+validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
+              '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
+              'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
+              '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
+
+build() {
+  cmake -B build -S $pkgname-$pkgver \
+    -DCMAKE_INSTALL_LIBEXECDIR=lib \
+    -DBUILD_TESTING=OFF
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+}

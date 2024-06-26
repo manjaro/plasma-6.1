@@ -1,0 +1,27 @@
+name: Build package-list
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-pkgs:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: manjaro/manjaro-pkg-action@build_list
+        with:
+          gpg-key: ${{ secrets.CI_PRIV_KEY }}
+          gpg-passphrase: ${{ secrets.CI_GPG_PASSPHRASE }}
+          boxit-host: ${{ secrets.BOXIT_HOST }}
+          boxit-target: ${{ secrets.BOXIT_TARGET }}
+          ssh-key: ${{ secrets.SSH_PACKAGE_CI }}
+        
+######### EDIT:
+          package_list: plasma
+          release_tag: 6.1.1-0
+          ## path to source repo
+          source_url: https://github.com/manjaro/plasma-6.1.git
+          source_folder: plasma-6.1
+          ## branch: (default: stable)
+          branch: unstable
+          ## custom-repo - default: ""
+          custom-repo: ""
