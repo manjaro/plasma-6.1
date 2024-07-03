@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=plasma-activities
-pkgver=6.1.1
+pkgver=6.1.2
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=0
 pkgdesc='Core components for KDE Activities'
@@ -26,7 +26,7 @@ conflicts=(kactivities)
 replaces=(kactivities)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('3dbdd9240208c5dfd2ca963e142256445a24459473eff6b3293027d0d3cce8d5'
+sha256sums=('3e02fc08bdb73d6546105b248199b86a65f29d6409053a1c61c015448719a6db'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
