@@ -52,7 +52,7 @@ makedepends=(extra-cmake-modules
              qt5-x11extras)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('08a12823fd78e7be04e23f1dd1f5ee6eb1535cab561237d6efd4b0d032dcaa74'
+sha256sums=('15ab4bf7709124ec4fe78422820901c8efb7fbb92245576be57c847482a5ec9b'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>

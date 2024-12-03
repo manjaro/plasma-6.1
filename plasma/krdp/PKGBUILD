@@ -28,7 +28,7 @@ makedepends=(extra-cmake-modules
              plasma-wayland-protocols)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('74de8e185be67d35bdd66a4194c79d7fe4d98794a33ec9be915433c86bc591cb'
+sha256sums=('a91de2c8e8b6fe852edeee50b722f2abebc3b38477d7ef935f9e6b7b7ce7c6b7'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
