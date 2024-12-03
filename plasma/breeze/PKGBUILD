@@ -5,9 +5,9 @@
 pkgbase=breeze
 pkgname=(breeze
          breeze5)
-pkgver=6.1.4
+pkgver=6.1.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=0
+pkgrel=1
 arch=(x86_64)
 pkgdesc='Artwork, styles and assets for the Breeze visual style for the Plasma Desktop'
 url='https://kde.org/plasma-desktop/'

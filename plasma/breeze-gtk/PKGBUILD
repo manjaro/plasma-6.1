@@ -1,9 +1,9 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=breeze-gtk
-pkgver=6.1.4
+pkgver=6.1.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=0
+pkgrel=1
 pkgdesc='Breeze widget theme for GTK 2 and 3'
 arch=(any)
 url='https://kde.org/plasma-desktop/'

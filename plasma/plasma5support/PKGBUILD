@@ -1,9 +1,9 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=plasma5support
-pkgver=6.1.4
+pkgver=6.1.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=0
+pkgrel=1
 pkgdesc='Support components for porting from KF5/Qt5 to KF6/Qt6'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'

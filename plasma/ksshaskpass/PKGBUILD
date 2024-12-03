@@ -4,9 +4,9 @@
 # Contributor: schuay <jakob.gruber@gmail.com>
 
 pkgname=ksshaskpass
-pkgver=6.1.4
+pkgver=6.1.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=0
+pkgrel=1
 pkgdesc='ssh-add helper that uses kwallet and kpassworddialog'
 url='https://kde.org/plasma-desktop/'
 license=(GPL-2.0-or-later)

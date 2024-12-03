@@ -1,9 +1,9 @@
 # Maintainer:Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kwallet-pam
-pkgver=6.1.4
+pkgver=6.1.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=0
+pkgrel=1
 pkgdesc='KWallet PAM integration'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'

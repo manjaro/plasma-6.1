@@ -4,9 +4,9 @@
 
 pkgname=oxygen-sounds
 pkgdesc='The Oxygen Sound Theme'
-pkgver=6.1.4
+pkgver=6.1.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=0
+pkgrel=1
 arch=(any)
 url='https://kde.org/plasma-desktop/'
 license=(LGPL-2.0-or-later)
