@@ -47,13 +47,23 @@ optdepends=('flatpak: Flatpak packages support'
             'fwupd: firmware update support'
             'packagekit-qt6: to manage packages from Arch Linux repositories (not recommended, use at your own risk)')
 groups=(plasma)
-source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
+        https://invent.kde.org/plasma/discover/-/commit/8a84672d1d47450df098ca4e54eda5e06e65edbc.patch
+        https://invent.kde.org/plasma/discover/-/commit/1db6d05d86d333e4a20df73c19ed339cdff4071c.patch)
 sha256sums=('6e2cf59fac2cb792420ed6df653f80307d6e33d6e6ae9c1af2827a93bae3cb8d'
-            'SKIP')
+            'SKIP'
+            '5e9c302090e8c5fa5e39a2356c748c3153b8ee03af45412b09ccf088814fb369'
+            '44793d4f5741c28c8b7ccd01e8cfb5390930a33bac17dff9d30d6a636c575414')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -p1 -i ../8a84672d1d47450df098ca4e54eda5e06e65edbc.patch
+  patch -p1 -i ../1db6d05d86d333e4a20df73c19ed339cdff4071c.patch
+}
 
 build() {
   cmake -B build -S $pkgname-$pkgver \

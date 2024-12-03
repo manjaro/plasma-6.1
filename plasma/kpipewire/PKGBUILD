@@ -22,13 +22,23 @@ depends=(ffmpeg
          qt6-declarative)
 makedepends=(extra-cmake-modules)
 groups=(plasma)
-source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
+        https://invent.kde.org/plasma/kpipewire/-/commit/c7d88d028ea1e5aa4ed1729fd987c7e1c0517faa.patch
+        https://invent.kde.org/plasma/kpipewire/-/commit/6a6ecfeb852f90a9471534bab7bd5c87d660b5fc.patch)
 sha256sums=('25b32cfcaff352f0c4acda5746adffd2e3b28b5ff0648521bde8628ca7145a49'
-            'SKIP')
+            'SKIP'
+            '98f82740d9d556d6f111bda9790815c6c7a14d7748358b486709f1af31d89718'
+            '6d78793fbd4205e9c349a416fa97a04f9356cae328e333a2bf9cd41f6515b0ef')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -p1 -i ../c7d88d028ea1e5aa4ed1729fd987c7e1c0517faa.patch
+  patch -p1 -i ../6a6ecfeb852f90a9471534bab7bd5c87d660b5fc.patch
+}
 
 build() {
   cmake -B build  -S $pkgname-$pkgver \
